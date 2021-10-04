@@ -9,7 +9,7 @@ def calculate_pre_score(student):
             if student[string]==corr_ans[i-1]:
                 score+=1
             
-    return (score*100/30)
+    return (score)
 
 def calculate_post_score(student):
     corr_ans = ['C', 'A' , 'C', 'E', 'B', 'B', 'B', 'B' , 'E', 'A', 'D', 'B', 'D', 'D', 'A', 'A', 'B', 'B', 'E', 'D', 
@@ -22,7 +22,7 @@ def calculate_post_score(student):
             if student[string]==corr_ans[i-1]:
                 score+=1
             
-    return (score*100/30)
+    return (score)
 
 def calculate_question_score_post(df):
     corr_ans = ['C', 'A' , 'C', 'E', 'B', 'B', 'B', 'B' , 'E', 'A', 'D', 'B', 'D', 'D', 'A', 'A', 'B', 'B', 'E', 'D', 
