@@ -73,3 +73,21 @@ def calculate_question_score_pre(df):
     df["PRE Q29"].value_counts().B/num,
     df["PRE Q30"].value_counts().C/num]
     return scores
+
+def by_gender_by_year(df, name):
+    is_f = df['PRE Q85']== 'A'
+    pre_f = df[is_f].apply(calculate_pre_score, axis=1).mean()
+    pre_f_error = df[is_f].apply(calculate_pre_score, axis=1).sem(axis=0)
+    post_f =df[is_f].apply(calculate_post_score, axis=1).mean()
+    post_f_error = df[is_f].apply(calculate_post_score, axis=1).sem(axis=0)
+    gain_f_error = np.sqrt(pre_f_error**2 + post_f_error**2)
+    is_m = df['PRE Q85']== 'B'
+    pre_m = df[is_m].apply(calculate_pre_score, axis=1).mean()
+    pre_m_error = df[is_m].apply(calculate_pre_score, axis=1).sem(axis=0)
+    post_m =df[is_m].apply(calculate_post_score, axis=1).mean()
+    post_m_error = df[is_m].apply(calculate_post_score, axis=1).sem(axis=0)
+    gain_m_error = np.sqrt(pre_m_error**2 + post_m_error**2)
+    
+
+    array = [name, pre_f, pre_f_error, post_f, post_f_error, post_f-pre_f, gain_f_error, pre_m, pre_m_error, post_m, post_m_error, post_m-pre_m, gain_m_error]
+    return array
