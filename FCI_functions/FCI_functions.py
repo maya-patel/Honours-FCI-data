@@ -74,20 +74,31 @@ def calculate_question_score_pre(df):
     df["PRE Q30"].value_counts().C/num]
     return scores
 
-def by_gender_by_year(df, name):
-    is_f = df['PRE Q85']== 'A'
-    pre_f = df[is_f].apply(calculate_pre_score, axis=1).mean()
-    pre_f_error = df[is_f].apply(calculate_pre_score, axis=1).sem(axis=0)
-    post_f =df[is_f].apply(calculate_post_score, axis=1).mean()
-    post_f_error = df[is_f].apply(calculate_post_score, axis=1).sem(axis=0)
-    gain_f_error = np.sqrt(pre_f_error**2 + post_f_error**2)
-    is_m = df['PRE Q85']== 'B'
-    pre_m = df[is_m].apply(calculate_pre_score, axis=1).mean()
-    pre_m_error = df[is_m].apply(calculate_pre_score, axis=1).sem(axis=0)
-    post_m =df[is_m].apply(calculate_post_score, axis=1).mean()
-    post_m_error = df[is_m].apply(calculate_post_score, axis=1).sem(axis=0)
-    gain_m_error = np.sqrt(pre_m_error**2 + post_m_error**2)
-    
 
-    array = [name, pre_f, pre_f_error, post_f, post_f_error, post_f-pre_f, gain_f_error, pre_m, pre_m_error, post_m, post_m_error, post_m-pre_m, gain_m_error]
-    return array
+def calculate_pre_score_2020(student):
+    corr_ans = [3,1,3,5,2,2,2,2,5,1,4,2,4,4,1,1,2,2,5,4,5,2,2,1,3,5,3,5,2,3]
+    pre = [] 
+    for i in range (1, 31):
+        string = "PRE Q" + str(i)
+        pre.append(string)
+    score = 0
+    for i in range(1,31):
+            if student[pre[i-1]]==corr_ans[i-1]:
+                score+=1
+            
+    return (score)
+
+
+def calculate_post_score_2020(student):
+    corr_ans = [3,1,3,5,2,2,2,2,5,1,4,2,4,4,1,1,2,2,5,4,5,2,2,1,3,5,3,5,2,3]
+    pre = [] 
+    for i in range (1, 31):
+        string = "POST Q" + str(i)
+        pre.append(string)
+    score = 0
+    for i in range(1,31):
+            if student[pre[i-1]]==corr_ans[i-1]:
+                score+=1
+            
+    return (score)
+

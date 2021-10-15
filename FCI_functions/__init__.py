@@ -1,1 +1,1 @@
-from .FCI_functions import calculate_post_score, calculate_pre_score, calculate_question_score_post, calculate_question_score_pre
+from .FCI_functions import calculate_post_score, calculate_pre_score, calculate_question_score_post, calculate_question_score_pre, calculate_pre_score_2020, calculate_post_score_2020
