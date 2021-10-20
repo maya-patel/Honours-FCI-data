@@ -76,7 +76,7 @@ def calculate_question_score_pre(df):
 
 
 def calculate_pre_score_2020(student):
-    corr_ans = [3,1,3,5,2,2,2,2,5,1,4,2,4,4,1,1,2,2,5,4,5,2,2,1,3,5,3,5,2,3]
+    corr_ans = [3,5,2,1,2,2,3,4,3,1,3,3,5,5,4,4,4,1,3,4,4,2,5,5,2,4,2,2,5,2]
     pre = [] 
     for i in range (1, 31):
         string = "PRE Q" + str(i)
@@ -90,7 +90,7 @@ def calculate_pre_score_2020(student):
 
 
 def calculate_post_score_2020(student):
-    corr_ans = [3,1,3,5,2,2,2,2,5,1,4,2,4,4,1,1,2,2,5,4,5,2,2,1,3,5,3,5,2,3]
+    corr_ans = [3,5,2,1,2,2,3,4,3,1,3,3,5,5,4,4,4,1,3,4,4,2,5,5,2,4,2,2,5,2]
     pre = [] 
     for i in range (1, 31):
         string = "POST Q" + str(i)
@@ -101,4 +101,3 @@ def calculate_post_score_2020(student):
                 score+=1
             
     return (score)
-
