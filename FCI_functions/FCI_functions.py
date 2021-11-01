@@ -72,7 +72,7 @@ def calculate_question_score_pre(df):
     df["PRE Q28"].value_counts().E/num,
     df["PRE Q29"].value_counts().B/num,
     df["PRE Q30"].value_counts().C/num]
-    return scores
+    return scores*100
 
 
 def calculate_pre_score_2020(student):
