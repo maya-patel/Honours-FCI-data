@@ -25,19 +25,39 @@ def calculate_post_score(student):
     return (score)
 
 def calculate_question_score_post(df):
-    corr_ans = ['C', 'A' , 'C', 'E', 'B', 'B', 'B', 'B' , 'E', 'A', 'D', 'B', 'D', 'D', 'A', 'A', 'B', 'B', 'E', 'D', 
-            'E', 'B', 'B', 'A', 'C', 'E', 'C', 'E', 'B', 'C']
-    scores = []
-    num_students = len(df.index)
-    for j in range(1, 31):
-        score = 0
-        string = "POST Q"+ str(j)
-        for i in range(1,num_students):
-                if df[string][i]==corr_ans[j-1]:
-                    score+=1
-        scores.append(score)
-        
-    return (scores)
+    num = len(df.index)
+    scores = [
+    df["POST Q1"].value_counts().C/num,
+    df["POST Q2"].value_counts().A/num,
+    df["PRE Q3"].value_counts().C/num,
+    df["POST Q4"].value_counts().E/num,
+    df["POST Q5"].value_counts().B/num,
+    df["POST Q6"].value_counts().B/num,
+    df["POST Q7"].value_counts().B/num,
+    df["POST Q8"].value_counts().B/num,
+    df["POST Q9"].value_counts().E/num,
+    df["POST Q10"].value_counts().A/num,
+    df["POST Q11"].value_counts().D/num,
+    df["POST Q12"].value_counts().B/num,
+    df["POST Q13"].value_counts().D/num,
+    df["POST Q14"].value_counts().D/num,
+    df["POST Q15"].value_counts().A/num,
+    df["POST Q16"].value_counts().A/num,
+    df["POST Q17"].value_counts().B/num,
+    df["POST Q18"].value_counts().B/num,
+    df["POST Q19"].value_counts().E/num,
+    df["POST Q20"].value_counts().D/num,
+    df["POST Q21"].value_counts().E/num,
+    df["POST Q22"].value_counts().B/num,
+    df["POST Q23"].value_counts().B/num,
+    df["POST Q24"].value_counts().A/num,
+    df["POST Q25"].value_counts().C/num,
+    df["POST Q26"].value_counts().E/num,
+    df["POST Q27"].value_counts().C/num,
+    df["POST Q28"].value_counts().E/num,
+    df["POST Q29"].value_counts().B/num,
+    df["POST Q30"].value_counts().C/num]
+    return scores
 
 def calculate_question_score_pre(df):
     num = len(df.index)
@@ -72,7 +92,7 @@ def calculate_question_score_pre(df):
     df["PRE Q28"].value_counts().E/num,
     df["PRE Q29"].value_counts().B/num,
     df["PRE Q30"].value_counts().C/num]
-    return scores*100
+    return scores
 
 
 def calculate_pre_score_2020(student):
