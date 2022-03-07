@@ -29,7 +29,7 @@ def calculate_question_score_post(df):
     scores = [
     df["POST Q1"].value_counts().C/num,
     df["POST Q2"].value_counts().A/num,
-    df["PRE Q3"].value_counts().C/num,
+    df["POST Q3"].value_counts().C/num,
     df["POST Q4"].value_counts().E/num,
     df["POST Q5"].value_counts().B/num,
     df["POST Q6"].value_counts().B/num,
@@ -121,3 +121,75 @@ def calculate_post_score_2020(student):
                 score+=1
             
     return (score)
+
+def calculate_question_score_pre_2020(df):
+    num = len(df.index)
+    scores = [
+    df["PRE Q1"].value_counts().loc[3.0]/num,
+    df["PRE Q24"].value_counts().loc[5.0]/num,
+    df["PRE Q25"].value_counts().loc[2.0]/num,
+    df["PRE Q26"].value_counts().loc[1.0]/num,
+    df["PRE Q27"].value_counts().loc[2.0]/num,
+    df["PRE Q28"].value_counts().loc[2.0]/num,
+    df["PRE Q29"].value_counts().loc[3.0]/num,
+    df["PRE Q30"].value_counts().loc[4.0]/num,
+    df["PRE Q31"].value_counts().loc[3.0]/num,
+    df["PRE Q32"].value_counts().loc[1.0]/num,
+    df["PRE Q33"].value_counts().loc[3.0]/num,
+    df["PRE Q34"].value_counts().loc[3.0]/num,
+    df["PRE Q35"].value_counts().loc[5.0]/num,
+    df["PRE Q36"].value_counts().loc[5.0]/num,
+    df["PRE Q37"].value_counts().loc[4.0]/num,
+    df["PRE Q38"].value_counts().loc[4.0]/num,
+    df["PRE Q39"].value_counts().loc[4.0]/num,
+    df["PRE Q40"].value_counts().loc[1.0]/num,
+    df["PRE Q41"].value_counts().loc[3.0]/num,
+    df["PRE Q42"].value_counts().loc[4.0]/num,
+    df["PRE Q43"].value_counts().loc[4.0]/num,
+    df["PRE Q44"].value_counts().loc[2.0]/num,
+    df["PRE Q45"].value_counts().loc[5.0]/num,
+    df["PRE Q46"].value_counts().loc[5.0]/num,
+    df["PRE Q47"].value_counts().loc[2.0]/num,
+    df["PRE Q48"].value_counts().loc[4.0]/num,
+    df["PRE Q49"].value_counts().loc[2.0]/num,
+    df["PRE Q50"].value_counts().loc[2.0]/num,
+    df["PRE Q51"].value_counts().loc[5.0]/num,
+    df["PRE Q52"].value_counts().loc[2.0]/num]
+    return scores
+
+def calculate_question_score_post_2020(df):
+    num = len(df.index)
+    scores = [
+    df["POST Q1"].value_counts().loc[3.0]/num,    
+    df["POST Q35"].value_counts().loc[5.0]/num,
+    df["POST Q36"].value_counts().loc[2.0]/num,
+    df["POST Q37"].value_counts().loc[1.0]/num,
+    df["POST Q38"].value_counts().loc[2.0]/num,
+    df["POST Q39"].value_counts().loc[2.0]/num,
+    df["POST Q40"].value_counts().loc[3.0]/num,
+    df["POST Q41"].value_counts().loc[4.0]/num,
+    df["POST Q42"].value_counts().loc[3.0]/num,
+    df["POST Q43"].value_counts().loc[1.0]/num,
+    df["POST Q44"].value_counts().loc[3.0]/num,
+    df["POST Q45"].value_counts().loc[3.0]/num,
+    df["POST Q46"].value_counts().loc[5.0]/num,
+    df["POST Q47"].value_counts().loc[5.0]/num,
+    df["POST Q48"].value_counts().loc[4.0]/num,
+    df["POST Q49"].value_counts().loc[4.0]/num,
+    df["POST Q50"].value_counts().loc[4.0]/num,
+    df["POST Q51"].value_counts().loc[1.0]/num,
+    df["POST Q52"].value_counts().loc[3.0]/num,
+    df["POST Q53"].value_counts().loc[4.0]/num,
+    df["POST Q54"].value_counts().loc[4.0]/num,
+    df["POST Q55"].value_counts().loc[2.0]/num,
+    df["POST Q56"].value_counts().loc[5.0]/num,
+    df["POST Q57"].value_counts().loc[5.0]/num,
+    df["POST Q58"].value_counts().loc[2.0]/num,
+    df["POST Q59"].value_counts().loc[4.0]/num,
+    df["POST Q60"].value_counts().loc[2.0]/num,
+    df["POST Q61"].value_counts().loc[2.0]/num,
+    df["POST Q62"].value_counts().loc[5.0]/num,
+    df["POST Q63"].value_counts().loc[2.0]/num]
+    return scores
+
+
