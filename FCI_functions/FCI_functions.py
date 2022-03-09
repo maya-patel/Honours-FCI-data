@@ -12,8 +12,8 @@ def calculate_pre_score(student):
     return (score)
 
 def calculate_post_score(student):
-    corr_ans = ['C', 'A' , 'C', 'E', 'B', 'B', 'B', 'B' , 'E', 'A', 'D', 'B', 'D', 'D', 'A', 'A', 'B', 'B', 'E', 'D', 
-            'E', 'B', 'B', 'A', 'C', 'E', 'C', 'E', 'B', 'C']
+    corr_ans = ['C', 'A' , 'C', 'E', 'B', 'B', 'B', 'B' , 'E', 'A', 'D', 'B', 'D', 'D', 'A', 'A',
+                'B','B', 'E', 'D', 'E', 'B', 'B', 'A', 'C', 'E', 'C', 'E', 'B', 'C']
     student_pre = [] 
     score = 0
     for i in range(1,31):
@@ -119,8 +119,37 @@ def calculate_post_score_2020(student):
     for i in range(1,31):
             if student[pre[i-1]]==corr_ans[i-1]:
                 score+=1
+                
+    return score
+                
+def calculate_pre_score_2021(student):
+    corr_ans = [3,1,3,5,2,2,2,2,5,1,4,2,4,4,1,1,2,2,5,4,5,2,2,1,3,5,3,5,2,3]
+    pre = []         
+    for i in range (1, 31):
+        string = "PRE Q" + str(i)
+        pre.append(string)
+    score = 0
+    for i in range(1,30):
+            if student[pre[i-1]]==corr_ans[i-1]:
+                score+=1
             
     return (score)
+
+
+
+def calculate_post_score_2021(student):
+    corr_ans = [3,1,3,5,2,2,2,2,5,1,4,2,4,4,1,1,2,2,5,4,5,2,2,1,3,5,3,5,2,3]
+    pre = [] 
+    for i in range (1, 31):
+        string = "POST Q" + str(i)
+        pre.append(string)
+    score = 0
+    for i in range(1,30):
+            if student[pre[i-1]]==corr_ans[i-1]:
+                score+=1
+                
+    return score
+
 
 def calculate_question_score_pre_2020(df):
     num = len(df.index)
