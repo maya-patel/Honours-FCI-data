@@ -62,7 +62,7 @@ def calculate_question_score_post(df):
 def calculate_question_score_pre(df):
     num = df['PRE Q1'].count()
     scores = [
-    df["PRE Q1"].value_counts().C/num,
+    df["PRE Q1"].value_counts().C/df["PRE Q1"].sum(),
     df["PRE Q2"].value_counts().A/num,
     df["PRE Q3"].value_counts().C/num,
     df["PRE Q4"].value_counts().E/num,
